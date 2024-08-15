@@ -26,6 +26,7 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: ${{ secrets.VITE_BASE_PATH }}
+          APP_HOME_PAGE: ${{ secrets.APP_HOME_PAGE }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
