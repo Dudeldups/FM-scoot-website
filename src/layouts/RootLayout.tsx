@@ -1,29 +1,25 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../styles/theme";
+
+import StyleResets from "../styles/StyleResets";
+import GlobalStyles from "../styles/GlobalStyles";
+
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const RootLayout = () => {
   return (
-    <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Image to Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/location">Location</Link>
-            </li>
-            <li>
-              <Link to="/careers">Careers</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <Outlet />
-      <footer>Footer</footer>
-    </>
+    <ThemeProvider theme={theme}>
+      <StyleResets />
+      <GlobalStyles />
+
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </ThemeProvider>
   );
 };
 

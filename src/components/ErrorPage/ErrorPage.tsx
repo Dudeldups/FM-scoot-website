@@ -14,6 +14,8 @@ const ErrorPage = ({ message }: ErrorPageProps) => {
   const error = useRouteError() as RouteError | null;
 
   return (
+    // TODO: Style the error page
+
     <div style={{ textAlign: "center", marginBlock: "50px" }}>
       <h1>Oops! Something went wrong.</h1>
       {message ? (

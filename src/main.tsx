@@ -20,28 +20,33 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
       children: [
         {
-          index: true,
-          element: <Home />,
-        },
-        {
-          path: "/home",
-          element: <Navigate to="/" replace />,
-        },
-        {
-          path: "/about",
-          element: <About />,
-        },
-        {
-          path: "/location",
-          element: <Location />,
-        },
-        {
-          path: "/careers",
-          element: <Careers />,
-        },
-        {
-          path: "*",
-          element: <ErrorPage message="This page does not exist." />,
+          errorElement: <ErrorPage />,
+          children: [
+            {
+              index: true,
+              element: <Home />,
+            },
+            {
+              path: "/home",
+              element: <Navigate to="/" replace />,
+            },
+            {
+              path: "/about",
+              element: <About />,
+            },
+            {
+              path: "/location",
+              element: <Location />,
+            },
+            {
+              path: "/careers",
+              element: <Careers />,
+            },
+            {
+              path: "*",
+              element: <ErrorPage message="This page does not exist." />,
+            },
+          ],
         },
       ],
     },
