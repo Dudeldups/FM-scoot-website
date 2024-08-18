@@ -9,4 +9,16 @@ export const theme = {
     white: "#fff",
     black: "#000",
   },
+  fontFamilies: {
+    heading: "Space Mono, monospace",
+    body: "Lexend Deca, sans-serif",
+  },
+  fontSizes: {
+    xs: ".9375rem", // 15px
+    sm: "1.4rem",
+    md: "1.6rem",
+    lg: "2.4rem",
+    xl: "3.6rem",
+    xxl: "4.8rem",
+  },
 };
