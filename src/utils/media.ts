@@ -44,7 +44,8 @@ export const media = {
       first: TemplateStringsArray | CSSObject,
       ...interpolations: Interpolation<object>[]
     ) => {
-      const max = breakpoints[size] ? pxToEm(breakpoints[size]) : pxToEm(Number(size));
+      const reducedSize = breakpoints[size] ? breakpoints[size] - 1 : Number(size) - 1;
+      const max = pxToEm(reducedSize);
 
       // if size is NaN, log an error
       if (!breakpoints[size] && isNaN(Number(size))) {

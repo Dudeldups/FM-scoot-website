@@ -33,7 +33,7 @@ describe("media utility", () => {
     `;
     expect(result && stripWhiteSpace(ruleSetToString(result))).toBe(
       stripWhiteSpace(`
-        @media (max-width: 64em) {
+        @media (max-width: 63.9375em) {
           color: blue;
         }
       `)
@@ -78,7 +78,7 @@ describe("media utility", () => {
     `;
     expect(result && stripWhiteSpace(ruleSetToString(result))).toBe(
       stripWhiteSpace(`
-        @media (max-width: 63.75em) {
+        @media (max-width: 63.6875em) {
           padding: 20px;
 
           &:hover {
