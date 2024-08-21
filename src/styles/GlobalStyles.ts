@@ -1,16 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
+const basePath = import.meta.env.VITE_BASE_PATH;
+
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: "Space Mono";
     font-weight: 700;
-    src: url("/assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
+    src: url("${basePath}assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
   }
 
   @font-face {
     font-family: "Lexend Deca";
     font-weight: 400;
-    src: url("/assets/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf") format("truetype");
+    src: url("${basePath}assets/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf") format("truetype");
   }
   
   body {
