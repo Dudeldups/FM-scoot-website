@@ -7,9 +7,13 @@ export const StyledFooter = styled.footer`
 `;
 
 export const StyledFooterNav = styled.nav`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const StyledFooterSocials = styled.ul`
