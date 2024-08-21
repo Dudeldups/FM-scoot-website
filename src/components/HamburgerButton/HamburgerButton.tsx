@@ -13,7 +13,8 @@ const HamburgerButton = ({
 }: HamburgerButtonProps) => {
   return (
     <StyledHamburgerButton
-      className={`${className || ""} ${isOpen ? "open" : ""}`.trim()}
+      className={className}
+      $isOpen={isOpen}
       aria-controls="navigation"
       aria-expanded={isOpen}
       onClick={() => setIsOpen(prev => !prev)}>

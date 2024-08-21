@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { media } from "../../utils/media";
 
-export const StyledHamburgerButton = styled.button`
+type StyledHamburgerButtonProps = {
+  $isOpen: boolean;
+};
+
+export const StyledHamburgerButton = styled.button<StyledHamburgerButtonProps>`
   position: absolute;
   right: 1.5rem;
   width: 2rem;
@@ -27,20 +31,22 @@ export const StyledHamburgerButton = styled.button`
     }
   }
 
-  &.open span {
-    &:nth-child(1) {
+  ${({ $isOpen }) =>
+    $isOpen &&
+    `
+    span:nth-child(1) {
       transition-delay: 0.25s;
       transform: translateY(0.5rem) rotate(45deg);
     }
 
-    &:nth-child(2) {
+    span:nth-child(2) {
       transition-delay: 0s;
       transform: translateX(120%);
     }
 
-    &:nth-child(3) {
+    span:nth-child(3) {
       transition-delay: 0.25s;
       transform: translateY(-0.5rem) rotate(-45deg);
     }
-  }
+  `}
 `;
