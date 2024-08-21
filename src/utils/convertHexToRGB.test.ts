@@ -1,4 +1,4 @@
-import convertHexToRGB from "./convertHextoRGB";
+import convertHexToRGB from "./convertHexToRGB";
 
 describe("convertHexToRGB", () => {
   it("should convert hex to RGB", () => {
