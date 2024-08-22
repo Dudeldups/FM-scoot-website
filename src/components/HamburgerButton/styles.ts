@@ -7,11 +7,12 @@ type StyledHamburgerButtonProps = {
 
 export const StyledHamburgerButton = styled.button<StyledHamburgerButtonProps>`
   position: absolute;
-  right: 1.5rem;
+  right: ${({ theme }) => theme.contentPadding.xs};
   width: 2rem;
   height: 1.75rem;
   padding: 0.25rem;
-  background: ${({ theme }) => theme.colors.gray};
+  background: transparent;
+  box-shadow: rgba(0, 0, 0, 0.425) 0px 2px 10px;
   overflow: hidden;
 
   ${media.min("md")`

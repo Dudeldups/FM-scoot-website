@@ -2,16 +2,30 @@
 
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { theme } from "../../styles/theme";
 
 import { StyledHeader } from "./styles";
 import { StyledScootLogo } from "../SVGs/styles";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
 import Navigation from "../Navigation/Navigation";
-import { AnimatePresence } from "framer-motion";
 
 const Header = () => {
+  const isLargerThanMobile = useMediaQuery(
+    `(min-width: ${theme.breakpoints.md}px)`
+  );
   const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false);
   const { pathname } = useLocation();
+
+  // Make Navigation visible on larger screens
+  useEffect(() => {
+    if (isLargerThanMobile) {
+      setIsHamburgerOpen(true);
+    } else {
+      setIsHamburgerOpen(false);
+    }
+  }, [isLargerThanMobile, setIsHamburgerOpen]);
 
   // Close the hamburger menu when the user presses the Escape key
   useEffect(() => {
