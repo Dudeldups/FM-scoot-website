@@ -1,13 +1,7 @@
 import { css, CSSObject, Interpolation } from "styled-components";
+import { theme } from "../styles/theme";
 
-const breakpoints: Record<string, number> = {
-  xs: 375,
-  sm: 580,
-  md: 740,
-  lg: 1024,
-  xl: 1440,
-  "2xl": 1920,
-};
+const { breakpoints } = theme;
 
 const pxToEm = (px: number) => `${px / 16}em`;
 

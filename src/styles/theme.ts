@@ -1,4 +1,12 @@
-export const theme = {
+interface Theme {
+  colors: Record<string, string>;
+  fontFamilies: Record<string, string>;
+  fontSizes: Record<string, string>;
+  breakpoints: Record<string, number>;
+  contentPadding: Record<string, string>;
+}
+
+export const theme: Theme = {
   colors: {
     yellow: "#fcb72b",
     darkNavy: "#495567",
@@ -21,5 +29,17 @@ export const theme = {
     lg: "2.4rem",
     xl: "3.6rem",
     xxl: "4.8rem",
+  },
+  breakpoints: {
+    xs: 375,
+    sm: 580,
+    md: 740,
+    lg: 1024,
+    xl: 1440,
+    "2xl": 1920,
+  },
+  contentPadding: {
+    xs: "1.5rem",
+    sm: "2.5rem",
   },
 };
