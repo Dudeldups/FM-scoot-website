@@ -4,6 +4,7 @@ interface Theme {
   fontSizes: Record<string, string>;
   breakpoints: Record<string, number>;
   contentPadding: Record<string, string>;
+  maxContentWidth: string;
 }
 
 export const theme: Theme = {
@@ -39,7 +40,9 @@ export const theme: Theme = {
     "2xl": 1920,
   },
   contentPadding: {
-    xs: "1.5rem",
-    sm: "2.5rem",
+    sm: "1.5rem",
+    md: "2.5rem",
+    lg: "3rem",
   },
+  maxContentWidth: "68.75rem",
 };

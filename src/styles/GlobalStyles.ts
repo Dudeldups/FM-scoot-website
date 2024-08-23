@@ -28,6 +28,11 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100dvh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    justify-items: center;
+
+    & > * {
+      width: 100%;
+    }
   }
 
   

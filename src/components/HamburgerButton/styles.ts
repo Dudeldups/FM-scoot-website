@@ -7,7 +7,7 @@ type StyledHamburgerButtonProps = {
 
 export const StyledHamburgerButton = styled.button<StyledHamburgerButtonProps>`
   position: absolute;
-  right: ${({ theme }) => theme.contentPadding.xs};
+  right: ${({ theme }) => theme.contentPadding.sm};
   width: 2rem;
   height: 1.75rem;
   padding: 0.25rem;
