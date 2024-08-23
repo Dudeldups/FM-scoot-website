@@ -9,6 +9,7 @@ import { theme } from "../../styles/theme";
 import { StyledHeader } from "./styles";
 import { StyledScootLogo } from "../SVGs/styles";
 import HamburgerButton from "../HamburgerButton/HamburgerButton";
+import MobileNavigation from "../MobileNavigation/MobileNavigation";
 import Navigation from "../Navigation/Navigation";
 
 const Header = () => {
@@ -18,11 +19,9 @@ const Header = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false);
   const { pathname } = useLocation();
 
-  // Make Navigation visible on larger screens
+  // Deactivate the hamburger menu when the screen size is larger than mobile
   useEffect(() => {
     if (isLargerThanMobile) {
-      setIsHamburgerOpen(true);
-    } else {
       setIsHamburgerOpen(false);
     }
   }, [isLargerThanMobile, setIsHamburgerOpen]);
@@ -64,12 +63,14 @@ const Header = () => {
 
       <AnimatePresence>
         {isHamburgerOpen && (
-          <Navigation
+          <MobileNavigation
             isHamburgerOpen={isHamburgerOpen}
             setIsHamburgerOpen={setIsHamburgerOpen}
           />
         )}
       </AnimatePresence>
+
+      {isLargerThanMobile && <Navigation />}
     </StyledHeader>
   );
 };
