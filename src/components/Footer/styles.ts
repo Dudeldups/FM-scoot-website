@@ -5,7 +5,18 @@ export const StyledFooter = styled.footer`
   background: ${({ theme }) => theme.colors.darkGray};
 
   & > section {
-    background: ${({ theme }) => theme.colors.darkNavy};
+    background-image: url("/assets/images/patterns/semi-circles.svg");
+    background-repeat: no-repeat;
+    background-position: 75% 100%;
+    background-color: ${({ theme }) => theme.colors.darkNavy};
+
+    ${media.min("lg")`
+      background-position: calc(100% + 10rem) 100%;
+    `}
+
+    ${media.min("2xl")`
+      background-position: calc(50% + 34rem) 100%;
+    `}
 
     & > div {
       max-width: ${({ theme }) =>
