@@ -1,52 +1,59 @@
 import { Link } from "react-router-dom";
 import { StyledFooter, StyledFooterNav, StyledFooterSocials } from "./styles";
 import { StyledScootLogo, StyledSocialIcon } from "../SVGs/styles";
-import GooglePlayImg from "../../assets/images/google-play.svg";
+import MobileStore from "../SVGs/MobileStore";
 
 const Footer = () => {
   return (
     <StyledFooter>
       <section>
-        <h2>Sign up and scoot off today</h2>
         <div>
-          <a href="#" aria-label="visit the Google Play Store">
-            <img src={GooglePlayImg} alt="" />
-          </a>
+          <h2>Sign up and Scoot off today</h2>
+          <div>
+            <a href="#" aria-label="Apple App Store">
+              <MobileStore type="apple" />
+            </a>
+            <a href="#" aria-label="Google Play Store">
+              <MobileStore type="google" />
+            </a>
+          </div>
         </div>
       </section>
-      <Link to="/">
-        <StyledScootLogo />
-      </Link>
-      <StyledFooterNav>
-        <ul>
+      <div>
+        <Link to="/">
+          <StyledScootLogo />
+        </Link>
+        <StyledFooterNav>
+          <ul>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/location">Location</Link>
+            </li>
+            <li>
+              <Link to="/careers">Careers</Link>
+            </li>
+          </ul>
+        </StyledFooterNav>
+        <StyledFooterSocials>
           <li>
-            <Link to="/about">About</Link>
+            <a href="#" aria-label="facebook">
+              <StyledSocialIcon type="facebook" />
+            </a>
           </li>
           <li>
-            <Link to="/location">Location</Link>
+            <a href="#" aria-label="x">
+              <StyledSocialIcon type="x" />
+            </a>
           </li>
           <li>
-            <Link to="/careers">Careers</Link>
+            <a href="#" aria-label="instagram">
+              <StyledSocialIcon type="instagram" />
+            </a>
           </li>
-        </ul>
-      </StyledFooterNav>
-      <StyledFooterSocials>
-        <li>
-          <a href="#" aria-label="facebook">
-            <StyledSocialIcon type="facebook" />
-          </a>
-        </li>
-        <li>
-          <a href="#" aria-label="x">
-            <StyledSocialIcon type="x" />
-          </a>
-        </li>
-        <li>
-          <a href="#" aria-label="instagram">
-            <StyledSocialIcon type="instagram" />
-          </a>
-        </li>
-      </StyledFooterSocials>
+        </StyledFooterSocials>
+      </div>
     </StyledFooter>
   );
 };
