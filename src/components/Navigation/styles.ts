@@ -16,12 +16,18 @@ export const StyledNavigation = styled.nav`
     display: flex;
     gap: 2rem;
   }
-  // TODO add transitions + hover effects
+
   li > a {
     font-weight: bold;
     text-decoration: none;
     font-family: ${({ theme }) => theme.fontFamilies.heading};
     font-size: ${({ theme }) => theme.fontSizes.xs};
     color: ${({ theme }) => theme.colors.darkNavy};
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus-visible {
+      color: ${({ theme }) => theme.colors.yellow};
+    }
   }
 `;

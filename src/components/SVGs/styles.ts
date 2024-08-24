@@ -3,6 +3,13 @@ import ScootLogo from "./ScootLogo";
 import SocialIcon from "./SocialIcon";
 
 export const StyledScootLogo = styled(ScootLogo)`
+  transition: transform 0.3s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.05);
+  }
+
   path {
     header & {
       fill: ${({ theme }) => theme.colors.darkNavy};
@@ -19,6 +26,7 @@ export const StyledSocialIcon = styled(SocialIcon)`
   height: auto;
 
   path {
+    transition: fill 0.3s;
     fill: ${({ theme }) => theme.colors.yellow};
   }
 `;

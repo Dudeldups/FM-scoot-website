@@ -26,9 +26,15 @@ const StyledMobileNavigation = styled.nav`
   li > a {
     font-size: ${({ theme }) => theme.fontSizes.md};
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.lightGrey};
     text-decoration: none;
     font-family: ${({ theme }) => theme.fontFamilies.heading};
+    color: ${({ theme }) => theme.colors.lightGrey};
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus-visible {
+      color: ${({ theme }) => theme.colors.yellow};
+    }
   }
 `;
 
