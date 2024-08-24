@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
-const basePath = import.meta.env.VITE_BASE_PATH;
+import basePath from "../utils/basePath";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {

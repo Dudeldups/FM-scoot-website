@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { media } from "../../utils/media";
+import basePath from "../../utils/basePath";
 
 export const StyledFooter = styled.footer`
   background: ${({ theme }) => theme.colors.darkGray};
 
   & > section {
-    background-image: url("/assets/images/patterns/semi-circles.svg");
+    background-image: url("${basePath}assets/images/patterns/semi-circles.svg");
     background-repeat: no-repeat;
     background-position: 75% 100%;
     background-color: ${({ theme }) => theme.colors.darkNavy};
