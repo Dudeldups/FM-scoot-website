@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
 import { StyledFooter, StyledFooterNav, StyledFooterSocials } from "./styles";
-import { StyledScootLogo } from "../SVGs/styles";
+import { StyledScootLogo, StyledSocialIcon } from "../SVGs/styles";
+import GooglePlayImg from "../../assets/images/google-play.svg";
 
 const Footer = () => {
   return (
     <StyledFooter>
-      <StyledScootLogo />
+      <section>
+        <h2>Sign up and scoot off today</h2>
+        <div>
+          <a href="#" aria-label="visit the Google Play Store">
+            <img src={GooglePlayImg} alt="" />
+          </a>
+        </div>
+      </section>
+      <Link to="/">
+        <StyledScootLogo />
+      </Link>
       <StyledFooterNav>
         <ul>
           <li>
@@ -20,9 +31,21 @@ const Footer = () => {
         </ul>
       </StyledFooterNav>
       <StyledFooterSocials>
-        <li>FB Logo</li>
-        <li>X Logo</li>
-        <li>Instagram Logo</li>
+        <li>
+          <a href="#" aria-label="facebook">
+            <StyledSocialIcon type="facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="x">
+            <StyledSocialIcon type="x" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="instagram">
+            <StyledSocialIcon type="instagram" />
+          </a>
+        </li>
       </StyledFooterSocials>
     </StyledFooter>
   );
