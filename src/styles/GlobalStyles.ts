@@ -16,10 +16,12 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     font-family: ${({ theme }) => theme.fontFamilies.body};
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: ${({ theme }) => theme.fontFamilies.heading};
+    line-height: 1;
   }
   
   #root {
