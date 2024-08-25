@@ -14,7 +14,7 @@ const Navigation = ({ className }: NavigationProps) => {
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/location">Location</NavLink>
+          <NavLink to="/locations">Locations</NavLink>
         </li>
         <li>
           <NavLink to="/careers">Careers</NavLink>

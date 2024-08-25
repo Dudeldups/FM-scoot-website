@@ -71,8 +71,8 @@ const MobileNavigation = ({
           </NavLink>
         </li>
         <li>
-          <NavLink to="/location" onClick={() => setIsHamburgerOpen(false)}>
-            Location
+          <NavLink to="/locations" onClick={() => setIsHamburgerOpen(false)}>
+            Locations
           </NavLink>
         </li>
         <li>

@@ -1,9 +1,9 @@
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 
-const Location = () => {
+const Locations = () => {
   useDocumentTitle();
 
-  return <div>Location</div>;
+  return <div>Locations</div>;
 };
 
-export default Location;
+export default Locations;

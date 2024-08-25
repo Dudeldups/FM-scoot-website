@@ -9,7 +9,7 @@ import RootLayout from "./layouts/RootLayout";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
-import Location from "./pages/Location/Location";
+import Locations from "./pages/Locations/Locations";
 import Careers from "./pages/Careers/Careers";
 
 const router = createBrowserRouter(
@@ -35,8 +35,8 @@ const router = createBrowserRouter(
               element: <About />,
             },
             {
-              path: "/location",
-              element: <Location />,
+              path: "/locations",
+              element: <Locations />,
             },
             {
               path: "/careers",
