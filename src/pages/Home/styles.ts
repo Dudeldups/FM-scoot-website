@@ -5,25 +5,36 @@ import basePath from "../../utils/basePath";
 export const StyledHomeSection = styled.section``;
 
 export const StyledHeroSection = styled.div`
+  overflow-x: hidden;
   display: grid;
   grid-template: "full";
 
+  background-image: url("${basePath}assets/images/patterns/right-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: calc(40% - 16rem) calc(100% - 1rem);
+
+  ${media.min("xs")`
+    background-position: calc(40% - 16rem) calc(100% - 2rem);
+  `}
+
+  ${media.min("sm")`
+    background-image: url("${basePath}assets/images/patterns/right-arrow.svg"),
+    url("${basePath}assets/images/patterns/white-circles.svg");
+    background-position: calc(40% - 16rem) calc(100% - 3rem), calc(100% + 2rem) calc(100% - 4rem);
+  `}
+
+  ${media.min("md")`
+    background-position: calc(40% - 16rem) calc(100% - 2rem), calc(100% + 2rem) calc(100% - 3rem);
+  `}
+
   ${media.min("lg")`
     position: relative;
-
-    &::after {
-      content: url("${basePath}assets/images/patterns/white-circles.svg");
-      position: absolute;
-      inset: auto 0 0 auto;
-      transform: translate(2rem, -1rem);
-    }
+    background-image: url("${basePath}assets/images/patterns/white-circles.svg");
+    background-position: calc(100% + 2rem) calc(100% + 2rem);
   `}
 
   ${media.min("xl")`
-    &::after {
-      inset: 50% 50% auto auto;
-      transform: translate(47rem, 5.7rem);
-    }
+    background-position: calc(50% + 40rem) calc(50% + 7.75rem);
   `}
 
   picture {
@@ -55,24 +66,12 @@ export const StyledHeroSection = styled.div`
     color: ${({ theme }) => theme.colors.white};
     text-align: center;
 
-    background-image: url("${basePath}assets/images/patterns/right-arrow.svg");
-    background-repeat: no-repeat;
-    background-position: calc(40% - 16rem) calc(100% - 1rem);
-
-    ${media.min("xs")`
-      background-position: calc(40% - 16rem) calc(100% - 2rem);
-    `}
-
     ${media.min("sm")`
       padding-bottom: 5rem;
-      background-image: url("${basePath}assets/images/patterns/right-arrow.svg"),
-      url("${basePath}assets/images/patterns/white-circles.svg");
-      background-position: calc(40% - 16rem) calc(100% - 3rem), calc(100% + 2rem) calc(100% - 4rem);
     `}
 
     ${media.min("md")`
       padding-inline: ${({ theme }) => theme.contentPadding.md};
-      background-position: calc(40% - 16rem) calc(100% - 2rem), calc(100% + 2rem) calc(100% - 3rem);
     `}
 
     ${media.min("lg")`
@@ -80,7 +79,6 @@ export const StyledHeroSection = styled.div`
       padding-inline: ${({ theme }) => theme.contentPadding.lg};
       padding-bottom: 0;
       text-align: left;
-      background: none;
     `}
 
     h1 {
