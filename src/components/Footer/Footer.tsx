@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
       </section>
       <div>
-        <Link to="/">
+        <Link to="/" aria-label="Home">
           <StyledScootLogo />
         </Link>
         <StyledFooterNav>
