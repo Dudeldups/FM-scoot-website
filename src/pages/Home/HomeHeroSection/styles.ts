@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import { media } from "../../utils/media";
-import basePath from "../../utils/basePath";
+import { media } from "../../../utils/media";
+import basePath from "../../../utils/basePath";
 
-export const StyledHomeSection = styled.section``;
-
-export const StyledHeroSection = styled.div`
+export const StyledHeroSection = styled.section`
   overflow-x: hidden;
   display: grid;
   grid-template: "full";
