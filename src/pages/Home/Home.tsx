@@ -1,6 +1,6 @@
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import HomeHeroSection from "./HomeHeroSection/HomeHeroSection";
-import HowToList from "./HowToList/HowToList";
+import HowToSection from "./HowToSection/HowToSection";
 
 const Home = () => {
   useDocumentTitle();
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <HomeHeroSection />
-      <HowToList />
+      <HowToSection />
     </>
   );
 };
