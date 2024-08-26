@@ -1,6 +1,7 @@
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import HomeHeroSection from "./HomeHeroSection/HomeHeroSection";
 import HowToSection from "./HowToSection/HowToSection";
+import ExplanationSection from "./ExplanationSecttion/ExplanationSection";
 
 const Home = () => {
   useDocumentTitle();
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <HomeHeroSection />
       <HowToSection />
+      <ExplanationSection />
     </>
   );
 };

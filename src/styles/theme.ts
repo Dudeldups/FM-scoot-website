@@ -41,7 +41,7 @@ export const theme: Theme = {
     "2xl": 1920,
   },
   contentPadding: {
-    sm: "1.5rem",
+    sm: "2rem",
     md: "2.5rem",
     lg: "3rem",
   },
