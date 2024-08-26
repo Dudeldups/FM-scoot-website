@@ -8,10 +8,11 @@ type HowToSectionProps = {
 const HowToSection = ({ className }: HowToSectionProps) => {
   return (
     <StyledHowToSection className={className}>
+      <h2 className="sr-only">How it works</h2>
       <ul>
         <li>
           <img src={LocateImg} alt="" width="56" height="56" />
-          <h2>Locate with app</h2>
+          <h3>Locate with app</h3>
           <p>
             Use the app to find the nearest scooter to you. We are continuously
             placing scooters in the areas with most demand, so one should never
@@ -21,7 +22,7 @@ const HowToSection = ({ className }: HowToSectionProps) => {
 
         <li>
           <img src={RideImg} alt="" width="56" height="56" />
-          <h2>Pick your scooter</h2>
+          <h3>Pick your scooter</h3>
           <p>
             We show the most important info for the scooters closest to you. So
             you know how much charge they have left and can see roughly how much
@@ -31,7 +32,7 @@ const HowToSection = ({ className }: HowToSectionProps) => {
 
         <li>
           <img src={ScooterImg} alt="" width="56" height="56" />
-          <h2>Enjoy the ride</h2>
+          <h3>Enjoy the ride</h3>
           <p>
             Scan the QR code and the bike will unlock. Retract the cable lock,
             put on a helmet, and you’re off! Always lock bikes away from

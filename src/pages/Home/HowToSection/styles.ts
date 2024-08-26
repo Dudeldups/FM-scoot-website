@@ -51,10 +51,12 @@ export const StyledHowToSection = styled.section`
         gap: 1.7rem;
       `}
 
+      // styles for the grey bar, starting from the image of the last <li>
       &:last-of-type {
         position: relative;
 
         &::after {
+          // going up for tablet
           ${media.min("md")`
             content: "";
             position: absolute;
@@ -66,6 +68,7 @@ export const StyledHowToSection = styled.section`
             background: ${({ theme }) => theme.colors.lightGrey};
           `}
 
+          // going left for desktop
           ${media.min("lg")`
             transform: translate(calc(-100% + 3rem), calc(-50% + 3rem));
             width: 100vw;
@@ -85,11 +88,11 @@ export const StyledHowToSection = styled.section`
       `}
     }
 
-    h2 {
+    h3 {
       grid-area: heading;
       font-size: ${({ theme }) => theme.fontSizes.sm};
       line-height: 1.75rem;
-      color: ${({ theme }) => theme.colors.darkGray};
+      color: ${({ theme }) => theme.colors.gray};
 
       ${media.min("md")`
         font-size: ${({ theme }) => theme.fontSizes.md};
@@ -104,10 +107,6 @@ export const StyledHowToSection = styled.section`
       grid-area: text;
       max-width: 35ch;
       color: ${({ theme }) => theme.colors.darkNavy};
-
-      ${media.min("md")`
-        max-width: 100%;
-      `}
     }
   }
 `;
