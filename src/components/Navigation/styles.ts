@@ -29,5 +29,10 @@ export const StyledNavigation = styled.nav`
     &:focus-visible {
       color: ${({ theme }) => theme.colors.yellow};
     }
+
+    &.active {
+      color: ${({ theme }) => theme.colors.yellow};
+      border-bottom: 2px solid ${({ theme }) => theme.colors.yellow};
+    }
   }
 `;
