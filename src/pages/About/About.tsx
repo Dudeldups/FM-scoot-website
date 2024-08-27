@@ -1,3 +1,4 @@
+import HeroSection from "../../components/HeroSection/HeroSection";
 import IntroductionSection from "../../components/IntroductionSection/IntroductionSection";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 
@@ -6,7 +7,7 @@ const About = () => {
 
   return (
     <>
-      About
+      <HeroSection site="about" />
       <IntroductionSection heading="Our values" />
     </>
   );
