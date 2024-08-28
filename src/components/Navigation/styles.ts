@@ -5,7 +5,7 @@ export const StyledNavigation = styled.nav`
   display: flex;
   justify-content: space-between;
   flex: 1;
-  gap: 2.5rem;
+  gap: 1rem;
   align-items: center;
 
   ${media.min("lg")`
