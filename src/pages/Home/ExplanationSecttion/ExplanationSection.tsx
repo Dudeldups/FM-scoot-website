@@ -1,5 +1,6 @@
 import { NearYouImg, PaymentsImg, TelemetryImg } from "../../../assets/images";
 import Btn from "../../../components/Btn/Btn";
+import HighlightContainer from "../../../components/HighlightContainer/HighlightContainer";
 import { StyledExplanationSection } from "./styles";
 
 type ExplanationSectionProps = {
@@ -11,7 +12,7 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
     <StyledExplanationSection className={className}>
       <h2 className="sr-only">What Scoot Offers</h2>
       <ul>
-        <li>
+        <HighlightContainer as="li">
           <div>
             <img
               src={TelemetryImg}
@@ -28,9 +29,9 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
             </p>
             <Btn to="/about">Learn More</Btn>
           </div>
-        </li>
+        </HighlightContainer>
 
-        <li>
+        <HighlightContainer as="li">
           <div>
             <img
               src={NearYouImg}
@@ -47,9 +48,9 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
             </p>
             <Btn to="/about">Learn More</Btn>
           </div>
-        </li>
+        </HighlightContainer>
 
-        <li>
+        <HighlightContainer as="li">
           <div>
             <img src={PaymentsImg} alt="A person taking money from a wallet." />
           </div>
@@ -63,7 +64,7 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
             </p>
             <Btn to="/about">Learn More</Btn>
           </div>
-        </li>
+        </HighlightContainer>
       </ul>
     </StyledExplanationSection>
   );
