@@ -4,6 +4,7 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import HighlightContainer from "../../components/HighlightContainer/HighlightContainer";
 import IntroductionSection from "../../components/IntroductionSection/IntroductionSection";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
+import FAQ from "./FAQ/FAQ";
 
 const About = () => {
   useDocumentTitle();
@@ -52,6 +53,8 @@ const About = () => {
       </FeatureSection>
 
       <IntroductionSection heading="Our values" />
+
+      <FAQ />
     </>
   );
 };
