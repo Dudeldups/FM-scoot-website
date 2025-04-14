@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { media } from "../../../utils/media";
+import { media } from "../../utils/media";
 
-export const StyledExplanationSection = styled.section`
+export const StyledFeatureSection = styled.section`
   overflow-x: hidden;
   margin-block: 7.5rem;
 
