@@ -64,9 +64,14 @@ const MobileNavigation = ({
       <ul>
         <li>
           <NavLink
-            to="/about"
+            to="/"
             ref={firstLinkRef}
             onClick={() => setIsHamburgerOpen(false)}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" onClick={() => setIsHamburgerOpen(false)}>
             About
           </NavLink>
         </li>
