@@ -7,6 +7,7 @@ type props = {
 };
 
 export const StyledHighlightContainer = styled.div<props>`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +21,7 @@ export const StyledHighlightContainer = styled.div<props>`
     text-align: left;
   `}
 
-  &:nth-of-type(1) {
+  .img-container {
     position: relative;
 
     &::after {
@@ -28,14 +29,24 @@ export const StyledHighlightContainer = styled.div<props>`
       z-index: -1;
       position: absolute;
       inset: 0;
-      transform: translateX(calc(100% + 4rem));
       background: ${({ theme }) => theme.colors.lightGrey};
       border-radius: 50%;
     }
   }
 
+  &:nth-child(odd) {
+    .img-container::after {
+      transform: translateX(calc(100% + 4rem));
+    }
+  }
+
+  &:nth-child(even) {
+    .img-container::after {
+      transform: translateX(calc(-100% - 4rem));
+    }
+  }
+
   &:nth-of-type(1) {
-    background: pink;
     // first arrow from right
 
     div:nth-of-type(1)::before {
