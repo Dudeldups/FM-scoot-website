@@ -50,7 +50,7 @@ const Home = () => {
                 hometown. We’re aiming to let our scooters loose on 23 cities
                 over the coming year.
               </p>
-              <Btn to="/about">Learn More</Btn>
+              <Btn to="/locations">Learn More</Btn>
             </div>
           </HighlightContainer>
 
