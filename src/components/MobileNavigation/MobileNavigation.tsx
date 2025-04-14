@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { Variants } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 import Btn from "../Btn/Btn";
 import { MotionStyledMobileNavigation } from "./styles";
@@ -29,6 +29,25 @@ const MobileNavigation = ({
 
   const navVariants: Variants = {
     hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.1,
+        ease: "easeOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  const divVariants: Variants = {
+    hidden: {
       x: "100%",
       scaleX: 0,
       opacity: 0,
@@ -40,6 +59,7 @@ const MobileNavigation = ({
       transition: {
         type: "tween",
         duration: 0.4,
+        delay: 0.1,
         ease: "easeInOut",
       },
     },
@@ -60,33 +80,41 @@ const MobileNavigation = ({
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      exit="exit">
-      <ul>
-        <li>
-          <NavLink
-            to="/"
-            ref={firstLinkRef}
-            onClick={() => setIsHamburgerOpen(false)}>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" onClick={() => setIsHamburgerOpen(false)}>
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/locations" onClick={() => setIsHamburgerOpen(false)}>
-            Locations
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/careers" onClick={() => setIsHamburgerOpen(false)}>
-            Careers
-          </NavLink>
-        </li>
-      </ul>
-      <Btn onClick={() => setIsHamburgerOpen(false)}>Get Scootin</Btn>
+      exit="exit"
+      onClick={() => setIsHamburgerOpen(false)}>
+      <motion.div
+        variants={divVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={e => e.stopPropagation()}>
+        <ul>
+          <li>
+            <NavLink
+              to="/"
+              ref={firstLinkRef}
+              onClick={() => setIsHamburgerOpen(false)}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" onClick={() => setIsHamburgerOpen(false)}>
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/locations" onClick={() => setIsHamburgerOpen(false)}>
+              Locations
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/careers" onClick={() => setIsHamburgerOpen(false)}>
+              Careers
+            </NavLink>
+          </li>
+        </ul>
+        <Btn onClick={() => setIsHamburgerOpen(false)}>Get Scootin</Btn>
+      </motion.div>
     </MotionStyledMobileNavigation>
   );
 };

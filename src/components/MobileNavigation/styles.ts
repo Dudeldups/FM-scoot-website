@@ -10,13 +10,21 @@ const StyledMobileNavigation = styled.nav`
   position: fixed;
   inset: 0;
   z-index: 10;
-  padding: 7rem ${({ theme }) => theme.contentPadding.sm} 1.5rem;
-  background: linear-gradient(
-    to right,
-    ${({ theme }) => convertHexToRGB(theme.colors.darkNavy, 0.6)} 30%,
-    ${({ theme }) => theme.colors.darkNavy} 30%
-  );
+  background-color: ${({ theme }) =>
+    convertHexToRGB(theme.colors.darkNavy, 0.6)};
   text-align: right;
+
+  div {
+    height: 100%;
+    width: min(90%, 24rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1.5rem;
+    padding: 7rem ${({ theme }) => theme.contentPadding.sm} 1.5rem;
+    background-color: ${({ theme }) => theme.colors.darkNavy};
+  }
 
   ul {
     display: flex;
