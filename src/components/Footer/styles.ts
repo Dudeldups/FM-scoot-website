@@ -45,6 +45,7 @@ export const StyledFooter = styled.footer`
         font-size: 2rem;
         line-height: 1;
         letter-spacing: -0.0894rem;
+        color: ${({ theme }) => theme.colors.white};
         margin-bottom: 2.5rem;
         text-align: center;
         max-width: 19ch;

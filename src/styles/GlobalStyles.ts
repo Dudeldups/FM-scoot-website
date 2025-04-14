@@ -19,8 +19,9 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.6;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  :where(h1, h2, h3, h4, h5, h6) {
     font-family: ${({ theme }) => theme.fontFamilies.heading};
+    color: ${({ theme }) => theme.colors.darkNavy};
     line-height: 1;
   }
   

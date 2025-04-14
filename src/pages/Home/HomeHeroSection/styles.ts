@@ -83,6 +83,7 @@ export const StyledHeroSection = styled.section`
       font-size: 2.5rem;
       letter-spacing: -0.1119rem;
       max-width: 16ch;
+      color: ${({ theme }) => theme.colors.white};
 
       ${media.min("md")`
         font-size: ${({ theme }) => theme.fontSizes.xl};
