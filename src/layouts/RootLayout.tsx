@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 
@@ -10,6 +10,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 const RootLayout = () => {
+  const location = useLocation();
   const navigate = useNavigate();
 
   // Query string redirect for GitHub Pages
@@ -24,6 +25,19 @@ const RootLayout = () => {
       navigate(path, { replace: true });
     }
   }, [navigate]);
+
+  // Scroll to top on route change with setTimeout for Firefox
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0 });
+    };
+
+    const timeoutId = setTimeout(scrollToTop, 0);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [location.pathname]);
 
   return (
     <ThemeProvider theme={theme}>
