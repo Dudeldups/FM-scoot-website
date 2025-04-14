@@ -54,6 +54,9 @@ export const StyledHighlightContainer = styled.div<props>`
     // first arrow from right
     .img-container::before {
       content: url("${basePath}assets/images/patterns/left-downward-arrow.svg");
+      // mirror horizontally if reversedArror is true
+      transform: ${({ $reversedArrow }) =>
+        $reversedArrow ? "scaleY(-1)" : "scaleY(1)"};
       position: absolute;
       inset: auto auto 0 0;
 
