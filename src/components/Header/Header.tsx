@@ -46,6 +46,15 @@ const Header = () => {
     setIsHamburgerOpen(false);
   }, [pathname]);
 
+  // remove the scroll bar when the hamburger menu is open
+  useEffect(() => {
+    if (isHamburgerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isHamburgerOpen]);
+
   return (
     <StyledHeader>
       <div>

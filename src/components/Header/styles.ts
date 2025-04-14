@@ -17,7 +17,7 @@ export const StyledHeader = styled.header`
     gap: 3.6rem;
     padding-inline: ${({ theme }) => theme.contentPadding.lg};
   `}
-
+  
   & > div {
     display: flex;
     align-items: center;

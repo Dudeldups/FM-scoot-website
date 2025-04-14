@@ -8,8 +8,9 @@ const StyledMobileNavigation = styled.nav`
   justify-content: space-between;
   align-items: flex-end;
   position: fixed;
-  inset: 4.8125rem 0 0 0;
-  padding: 4rem ${({ theme }) => theme.contentPadding.sm} 1.5rem;
+  inset: 0;
+  z-index: 10;
+  padding: 7rem ${({ theme }) => theme.contentPadding.sm} 1.5rem;
   background: linear-gradient(
     to right,
     ${({ theme }) => convertHexToRGB(theme.colors.darkNavy, 0.6)} 30%,
