@@ -38,6 +38,10 @@ export const StyledHighlightContainer = styled.div<props>`
     .img-container::after {
       transform: translateX(calc(100% + 4rem));
     }
+
+    ${media.min("lg")`
+      flex-direction: row-reverse;
+    `}
   }
 
   &:nth-child(even) {
@@ -48,8 +52,7 @@ export const StyledHighlightContainer = styled.div<props>`
 
   &:nth-of-type(1) {
     // first arrow from right
-
-    div:nth-of-type(1)::before {
+    .img-container::before {
       content: url("${basePath}assets/images/patterns/left-downward-arrow.svg");
       position: absolute;
       inset: auto auto 0 0;
@@ -62,7 +65,7 @@ export const StyledHighlightContainer = styled.div<props>`
 
   &:nth-of-type(2) {
     // second arrow from left
-    div:nth-of-type(1)::before {
+    .img-container::before {
       content: url("${basePath}assets/images/patterns/right-arrow.svg");
       position: absolute;
       inset: 0 50% auto auto;
@@ -71,11 +74,6 @@ export const StyledHighlightContainer = styled.div<props>`
       ${media.min("md")`
         transform: translateX(-2rem);
       `}
-    }
-
-    // the second <li> has the circle on the left
-    div:nth-of-type(1)::after {
-      transform: translateX(calc(-100% - 3rem));
     }
   }
 
@@ -87,13 +85,6 @@ export const StyledHighlightContainer = styled.div<props>`
       inset: 50% 50% auto auto;
       transform: translate(95%, -105%);
     }
-  }
-
-  // uneven li are row-reversed on lg mq
-  &:nth-child(odd) {
-    ${media.min("lg")`
-      flex-direction: row-reverse;
-    `}
   }
 
   img {
