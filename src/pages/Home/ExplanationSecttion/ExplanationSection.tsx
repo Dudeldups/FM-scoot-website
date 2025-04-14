@@ -13,7 +13,7 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
       <h2 className="sr-only">What Scoot Offers</h2>
       <ul>
         <HighlightContainer as="li">
-          <div>
+          <div className="img-container">
             <img
               src={TelemetryImg}
               alt="A woman smiling while using her phone."
@@ -32,7 +32,7 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
         </HighlightContainer>
 
         <HighlightContainer as="li">
-          <div>
+          <div className="img-container">
             <img
               src={NearYouImg}
               alt="A street and tall buildings in an urban area."
@@ -51,7 +51,7 @@ const ExplanationSection = ({ className }: ExplanationSectionProps) => {
         </HighlightContainer>
 
         <HighlightContainer as="li">
-          <div>
+          <div className="img-container">
             <img src={PaymentsImg} alt="A person taking money from a wallet." />
           </div>
           <div>
