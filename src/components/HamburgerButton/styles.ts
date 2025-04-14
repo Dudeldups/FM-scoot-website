@@ -11,8 +11,8 @@ export const StyledHamburgerButton = styled.button<StyledHamburgerButtonProps>`
   width: 2rem;
   height: 1.75rem;
   padding: 0.25rem;
-  background: transparent;
-  box-shadow: rgba(0, 0, 0, 0.425) 0px 2px 10px;
+  background: ${({ theme }) => theme.colors.yellow};
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 10px;
   overflow: hidden;
 
   ${media.min("md")`
@@ -23,7 +23,7 @@ export const StyledHamburgerButton = styled.button<StyledHamburgerButtonProps>`
     display: block;
     width: 100%;
     height: 0.25rem;
-    background: ${({ theme }) => theme.colors.yellow};
+    background: ${({ theme }) => theme.colors.white};
     transition: transform 0.3s ease-in-out;
 
     &:nth-child(2) {
