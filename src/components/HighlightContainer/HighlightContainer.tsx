@@ -2,7 +2,7 @@ import { StyledHighlightContainer } from "./styles";
 
 type HighlightContainerProps = {
   className?: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
   reversedArrow?: boolean;
   as?: keyof JSX.IntrinsicElements;
 };
