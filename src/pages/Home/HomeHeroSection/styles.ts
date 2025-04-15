@@ -127,4 +127,64 @@ export const StyledHeroSection = styled.section`
       `}
     }
   }
+
+  @property --gradient-percentage1 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  @property --gradient-percentage2 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  button {
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      box-sizing: content-box;
+      inset: -0.4rem;
+      z-index: -1;
+      background: radial-gradient(
+        50% 100% at var(--gradient-percentage1) var(--gradient-percentage2),
+        ${({ theme }) => theme.colors.white},
+        transparent 30%
+      );
+      animation: rotation 2.5s linear forwards;
+    }
+
+    &::before {
+      filter: blur(20px);
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      --gradient-percentage1: 100%;
+      --gradient-percentage2: 0%;
+    }
+    18% {
+      --gradient-percentage1: 100%;
+      --gradient-percentage2: 100%;
+    }
+    50% {
+      --gradient-percentage1: 0%;
+      --gradient-percentage2: 100%;
+    }
+    82% {
+      --gradient-percentage1: 0%;
+      --gradient-percentage2: 0%;
+      opacity: 1;
+    }
+    100% {
+      --gradient-percentage1: 100%;
+      --gradient-percentage2: 0%;
+      opacity: 0;
+    }
+  }
 `;
