@@ -147,7 +147,6 @@ export const StyledHeroSection = styled.section`
     &::before {
       content: "";
       position: absolute;
-      box-sizing: content-box;
       inset: -0.4rem;
       z-index: -1;
       background: radial-gradient(
@@ -155,34 +154,39 @@ export const StyledHeroSection = styled.section`
         ${({ theme }) => theme.colors.white},
         transparent 30%
       );
-      animation: rotation 2.5s linear forwards;
+      animation: rotation 2s linear forwards;
+      animation-delay: 1s;
+      opacity: 0;
     }
 
     &::before {
-      filter: blur(20px);
+      inset: -0.9rem;
+      filter: blur(10px);
     }
   }
 
   @keyframes rotation {
     0% {
-      --gradient-percentage1: 100%;
+      --gradient-percentage1: 0%;
       --gradient-percentage2: 0%;
+      opacity: 0;
     }
-    18% {
+    25% {
       --gradient-percentage1: 100%;
-      --gradient-percentage2: 100%;
-    }
-    50% {
-      --gradient-percentage1: 0%;
-      --gradient-percentage2: 100%;
-    }
-    82% {
-      --gradient-percentage1: 0%;
       --gradient-percentage2: 0%;
       opacity: 1;
     }
-    100% {
+    50% {
       --gradient-percentage1: 100%;
+      --gradient-percentage2: 100%;
+    }
+    75% {
+      --gradient-percentage1: 0%;
+      --gradient-percentage2: 100%;
+      opacity: 1;
+    }
+    100% {
+      --gradient-percentage1: 0%;
       --gradient-percentage2: 0%;
       opacity: 0;
     }
