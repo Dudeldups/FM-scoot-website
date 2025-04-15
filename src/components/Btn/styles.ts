@@ -9,11 +9,14 @@ export const StyledBtn = styled.button`
   border: 2px solid ${({ theme }) => theme.colors.yellow};
   background-color: ${({ theme }) => theme.colors.yellow};
 
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition-property: background-color, color, scale;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 
   &:hover,
   &:focus-visible {
     color: ${({ theme }) => theme.colors.yellow};
     background-color: ${({ theme }) => theme.colors.white};
+    scale: 1.05;
   }
 `;
