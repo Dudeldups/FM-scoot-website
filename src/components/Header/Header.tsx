@@ -1,5 +1,3 @@
-// TODO find out where the Get Scootin button should link to (modal? app store section?)
-
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";

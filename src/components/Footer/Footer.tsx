@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import { StyledFooter, StyledFooterNav, StyledFooterSocials } from "./styles";
 import { StyledScootLogo, StyledSocialIcon } from "../SVGs/styles";
 import MobileStore from "../SVGs/MobileStore";
+import { useStoreRef } from "../../hooks/useStoreRef";
 
 const Footer = () => {
+  const appStoreSectionRef = useStoreRef("appStoreSection");
+
   return (
     <StyledFooter>
-      <section>
+      <section ref={appStoreSectionRef}>
         <div>
           <h2>Sign up and Scoot off today</h2>
           <div>

@@ -4,6 +4,7 @@ import { Variants, motion } from "framer-motion";
 
 import Btn from "../Btn/Btn";
 import { MotionStyledMobileNavigation } from "./styles";
+import { useRefStore } from "../../stores/refStore";
 
 type MobileNavigationProps = {
   className?: string;
@@ -17,6 +18,9 @@ const MobileNavigation = ({
   setIsHamburgerOpen,
 }: MobileNavigationProps) => {
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const appStoreSectionRef = useRefStore(
+    state => state.refs["appStoreSection"]
+  );
 
   // Focus the first link in the navigation when the hamburger menu opens
   useEffect(() => {
@@ -26,6 +30,17 @@ const MobileNavigation = ({
       }
     }
   }, [isHamburgerOpen]);
+
+  // Scroll to the store section when the user clicks on the "Get Scootin" button
+  const handleGetScootinClick = () => {
+    setIsHamburgerOpen(false);
+    if (appStoreSectionRef?.current) {
+      appStoreSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
 
   const navVariants: Variants = {
     hidden: {
@@ -113,7 +128,7 @@ const MobileNavigation = ({
             </NavLink>
           </li>
         </ul>
-        <Btn onClick={() => setIsHamburgerOpen(false)}>Get Scootin</Btn>
+        <Btn onClick={() => handleGetScootinClick()}>Get Scootin</Btn>
       </motion.div>
     </MotionStyledMobileNavigation>
   );

@@ -6,12 +6,26 @@ import {
 } from "../../../assets/images";
 import { StyledHeroSection } from "./styles";
 import Btn from "../../../components/Btn/Btn";
+import { useRefStore } from "../../../stores/refStore";
 
 type HomeHeroSectionProps = {
   className?: string;
 };
 
 const HomeHeroSection = ({ className }: HomeHeroSectionProps) => {
+  const appStoreSectionRef = useRefStore(
+    state => state.refs["appStoreSection"]
+  );
+
+  const handleGetScootinClick = () => {
+    if (appStoreSectionRef?.current) {
+      appStoreSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
+
   return (
     <StyledHeroSection className={className}>
       <picture>
@@ -36,7 +50,7 @@ const HomeHeroSection = ({ className }: HomeHeroSectionProps) => {
           convenient locations in each of our cities. Use our app to locate the
           nearest bike, unlock it with a tap, and you’re away!
         </p>
-        <Btn>Get Scootin</Btn>
+        <Btn onClick={() => handleGetScootinClick()}>Get Scootin</Btn>
       </div>
     </StyledHeroSection>
   );
