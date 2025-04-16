@@ -138,5 +138,9 @@ export const StyledFooterSocials = styled.ul`
     path {
       fill: ${({ theme }) => theme.colors.white};
     }
+
+    & > * {
+      scale: 1.1;
+    }
   }
 `;
