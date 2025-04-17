@@ -14,6 +14,11 @@ const GlobalStyles = createGlobalStyle`
     src: url("${basePath}assets/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf") format("truetype");
   }
   
+  html {
+    /* framer motion workaround for container bug */
+    position: relative;
+  }
+
   body {
     font-family: ${({ theme }) => theme.fontFamilies.body};
     line-height: 1.6;
