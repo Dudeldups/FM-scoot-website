@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { media } from "../../utils/media";
 import basePath from "../../utils/basePath";
+import { motion } from "framer-motion";
 
 type props = {
   $reversedArrow?: boolean;
 };
 
-export const StyledHighlightContainer = styled.div<props>`
+const StyledHighlightContainer = styled.div<props>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -134,3 +135,5 @@ export const StyledHighlightContainer = styled.div<props>`
     color: ${({ theme }) => theme.colors.darkNavy};
   }
 `;
+
+export const MotionHighlightContainer = motion(StyledHighlightContainer);
