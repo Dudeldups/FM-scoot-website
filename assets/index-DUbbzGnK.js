@@ -840,7 +840,7 @@ select {
     `}
   }
 
-  & article {
+  article {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -856,7 +856,7 @@ select {
     `}
   }
 
-  & h3 {
+  h3 {
     flex-shrink: 0;
     font-size: ${({theme:e})=>e.fontSizes.md};
     text-align: center;
@@ -866,25 +866,26 @@ select {
     `}
   }
 
-  & ul {
+  ul {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     flex: 1;
   }
 
-  & details {
+  details {
     padding: 2rem 1.75rem;
     background-color: ${({theme:e})=>e.colors.snow};
 
-    & summary {
+    summary {
       display: flex;
       align-items: center;
       justify-content: space-between;
       list-style: none;
+      cursor: pointer;
     }
 
-    & strong {
+    strong {
       font-size: 1.125rem;
       color: ${({theme:e})=>e.colors.darkNavy};
 
@@ -893,25 +894,23 @@ select {
       `}
     }
 
-    & p {
+    p {
       margin-top: 1rem;
     }
   }
 
-  & details > summary {
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 0.75rem;
-      aspect-ratio: 1;
-      border-top: 0.2rem solid ${({theme:e})=>e.colors.yellow};
-      border-left: 0.2rem solid ${({theme:e})=>e.colors.yellow};
-      rotate: 45deg;
-      transition: rotate 0.25s, transform 0.25s;
-    }
+  details summary::after {
+    content: "";
+    display: inline-block;
+    width: 0.75rem;
+    aspect-ratio: 1;
+    border-top: 0.2rem solid ${({theme:e})=>e.colors.yellow};
+    border-left: 0.2rem solid ${({theme:e})=>e.colors.yellow};
+    rotate: 45deg;
+    transition: rotate 0.25s, transform 0.25s;
   }
 
-  & details[open] > summary::after {
+  details[open] summary::after {
     rotate: 225deg;
     transform: translate(25%, 25%);
   }
