@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { StyledForm, StyledFormContainer, StyledWrapper } from "./styles";
 import Btn from "../../../components/Btn/Btn";
+import { CloseImg } from "../../../assets/images";
 
 type ContactFormProps = {
   setIsContactFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -46,7 +47,7 @@ const ContactForm = ({ setIsContactFormOpen }: ContactFormProps) => {
     <StyledWrapper onClick={() => setIsContactFormOpen(false)}>
       <StyledFormContainer onClick={e => e.stopPropagation()}>
         <button aria-label="close" onClick={() => setIsContactFormOpen(false)}>
-          Close
+          <img src={CloseImg} alt="" width={24} height={24} />
         </button>
 
         <hgroup>
