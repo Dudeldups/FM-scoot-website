@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   WorldMapDesktopImg,
   WorldMapMobileImg,
@@ -12,9 +13,12 @@ import {
   StyledLocationsSection,
   StyledTextContainer,
 } from "./styles";
+import ContactForm from "./ContactForm/ContactForm";
 
 const Locations = () => {
   useDocumentTitle();
+
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   return (
     <>
@@ -58,9 +62,13 @@ const Locations = () => {
             message us by clicking the link or messaging us on social.
           </p>
 
-          <Btn>Message Us</Btn>
+          <Btn onClick={() => setIsContactFormOpen(true)}>Message Us</Btn>
         </StyledTextContainer>
       </StyledLocationsSection>
+
+      {isContactFormOpen && (
+        <ContactForm setIsContactFormOpen={setIsContactFormOpen} />
+      )}
     </>
   );
 };
