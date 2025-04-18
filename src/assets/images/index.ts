@@ -13,6 +13,7 @@ export { default as DesktopCareersLocationHeroImg } from "./hero-img/careers-loc
 export { default as LocateImg } from "./icons/locate.svg";
 export { default as RideImg } from "./icons/ride.svg";
 export { default as ScooterImg } from "./icons/scooter.svg";
+export { default as CloseImg } from "./icons/close.svg";
 
 export { default as BetterLivingImg } from "./better-living.jpg";
 export { default as DigitalEraImg } from "./digital-era.jpg";
