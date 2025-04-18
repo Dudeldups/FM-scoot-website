@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { media } from "../../../utils/media";
-// import basePath from "../../../utils/basePath";
 
 export const StyledFAQSection = styled.section`
   max-width: ${({ theme }) =>
@@ -31,7 +30,7 @@ export const StyledFAQSection = styled.section`
     `}
   }
 
-  & article {
+  article {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -47,7 +46,7 @@ export const StyledFAQSection = styled.section`
     `}
   }
 
-  & h3 {
+  h3 {
     flex-shrink: 0;
     font-size: ${({ theme }) => theme.fontSizes.md};
     text-align: center;
@@ -57,25 +56,26 @@ export const StyledFAQSection = styled.section`
     `}
   }
 
-  & ul {
+  ul {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     flex: 1;
   }
 
-  & details {
+  details {
     padding: 2rem 1.75rem;
     background-color: ${({ theme }) => theme.colors.snow};
 
-    & summary {
+    summary {
       display: flex;
       align-items: center;
       justify-content: space-between;
       list-style: none;
+      cursor: pointer;
     }
 
-    & strong {
+    strong {
       font-size: 1.125rem;
       color: ${({ theme }) => theme.colors.darkNavy};
 
@@ -84,25 +84,23 @@ export const StyledFAQSection = styled.section`
       `}
     }
 
-    & p {
+    p {
       margin-top: 1rem;
     }
   }
 
-  & details > summary {
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 0.75rem;
-      aspect-ratio: 1;
-      border-top: 0.2rem solid ${({ theme }) => theme.colors.yellow};
-      border-left: 0.2rem solid ${({ theme }) => theme.colors.yellow};
-      rotate: 45deg;
-      transition: rotate 0.25s, transform 0.25s;
-    }
+  details summary::after {
+    content: "";
+    display: inline-block;
+    width: 0.75rem;
+    aspect-ratio: 1;
+    border-top: 0.2rem solid ${({ theme }) => theme.colors.yellow};
+    border-left: 0.2rem solid ${({ theme }) => theme.colors.yellow};
+    rotate: 45deg;
+    transition: rotate 0.25s, transform 0.25s;
   }
 
-  & details[open] > summary::after {
+  details[open] summary::after {
     rotate: 225deg;
     transform: translate(25%, 25%);
   }
